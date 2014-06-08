@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SIPROLIMARModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SIPROLIMARModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="SIPROLIMARModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cliente_TipoTelefono" EntityType="SIPROLIMARModel.Store.Cliente_TipoTelefono" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Factura" EntityType="SIPROLIMARModel.Store.Factura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LineaFactura" EntityType="SIPROLIMARModel.Store.LineaFactura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Producto" EntityType="SIPROLIMARModel.Store.Producto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rol" EntityType="SIPROLIMARModel.Store.Rol" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="SIPROLIMARModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TamannoProducto" EntityType="SIPROLIMARModel.Store.TamannoProducto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoFactura" EntityType="SIPROLIMARModel.Store.TipoFactura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoTelefono" EntityType="SIPROLIMARModel.Store.TipoTelefono" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="SIPROLIMARModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario_Rol" EntityType="SIPROLIMARModel.Store.Usuario_Rol" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Cliente_TipoTelefono_Cliente" Association="SIPROLIMARModel.Store.FK_Cliente_TipoTelefono_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Cliente_TipoTelefono" EntitySet="Cliente_TipoTelefono" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_TipoTelefono_TipoTelefono" Association="SIPROLIMARModel.Store.FK_Cliente_TipoTelefono_TipoTelefono">
+      <End Role="TipoTelefono" EntitySet="TipoTelefono" />
+      <End Role="Cliente_TipoTelefono" EntitySet="Cliente_TipoTelefono" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_Cliente" Association="SIPROLIMARModel.Store.FK_Factura_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_TipoFactura" Association="SIPROLIMARModel.Store.FK_Factura_TipoFactura">
+      <End Role="TipoFactura" EntitySet="TipoFactura" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LineaFactura_Factura" Association="SIPROLIMARModel.Store.FK_LineaFactura_Factura">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="LineaFactura" EntitySet="LineaFactura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LineaFactura_Producto" Association="SIPROLIMARModel.Store.FK_LineaFactura_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="LineaFactura" EntitySet="LineaFactura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_TamannoProducto" Association="SIPROLIMARModel.Store.FK_Producto_TamannoProducto">
+      <End Role="TamannoProducto" EntitySet="TamannoProducto" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Rol_Rol" Association="SIPROLIMARModel.Store.FK_Usuario_Rol_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuario_Rol" EntitySet="Usuario_Rol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Rol_Usuario" Association="SIPROLIMARModel.Store.FK_Usuario_Rol_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario_Rol" EntitySet="Usuario_Rol" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cedula" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="nombre" Type="nchar" Nullable="false" MaxLength="60" />
+    <Property Name="direccion" Type="nchar" Nullable="false" MaxLength="200" />
+    <Property Name="correo" Type="nchar" MaxLength="60" />
+    <Property Name="nombreEmpresa" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Cliente_TipoTelefono">
+    <Key>
+      <PropertyRef Name="cliente" />
+      <PropertyRef Name="tipoTelefono" />
+    </Key>
+    <Property Name="cliente" Type="int" Nullable="false" />
+    <Property Name="tipoTelefono" Type="int" Nullable="false" />
+    <Property Name="numero" Type="nchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="idFactura" />
+    </Key>
+    <Property Name="idFactura" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechaHora" Type="datetime" Nullable="false" />
+    <Property Name="montoTotal" Type="float" Nullable="false" />
+    <Property Name="cliente" Type="int" Nullable="false" />
+    <Property Name="tipoFactura" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LineaFactura">
+    <Key>
+      <PropertyRef Name="producto" />
+      <PropertyRef Name="factura" />
+    </Key>
+    <Property Name="producto" Type="int" Nullable="false" />
+    <Property Name="factura" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="nchar" Nullable="false" MaxLength="20" />
+    <Property Name="tamaño" Type="int" Nullable="false" />
+    <Property Name="cantidadExistencia" Type="int" Nullable="false" />
+    <Property Name="precioVenta" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="nchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TamannoProducto">
+    <Key>
+      <PropertyRef Name="idTamaño" />
+    </Key>
+    <Property Name="idTamaño" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="nchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TipoFactura">
+    <Key>
+      <PropertyRef Name="idTipoFactura" />
+    </Key>
+    <Property Name="idTipoFactura" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="nchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TipoTelefono">
+    <Key>
+      <PropertyRef Name="idTipoTelefono" />
+    </Key>
+    <Property Name="idTipoTelefono" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="nchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombreUsuario" Type="nchar" Nullable="false" MaxLength="20" />
+    <Property Name="contrasenna" Type="nchar" Nullable="false" MaxLength="20" />
+    <Property Name="rol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario_Rol">
+    <Key>
+      <PropertyRef Name="usuario" />
+      <PropertyRef Name="rol" />
+    </Key>
+    <Property Name="usuario" Type="int" Nullable="false" />
+    <Property Name="rol" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cliente_TipoTelefono_Cliente">
+    <End Role="Cliente" Type="SIPROLIMARModel.Store.Cliente" Multiplicity="1" />
+    <End Role="Cliente_TipoTelefono" Type="SIPROLIMARModel.Store.Cliente_TipoTelefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Cliente_TipoTelefono">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_TipoTelefono_TipoTelefono">
+    <End Role="TipoTelefono" Type="SIPROLIMARModel.Store.TipoTelefono" Multiplicity="1" />
+    <End Role="Cliente_TipoTelefono" Type="SIPROLIMARModel.Store.Cliente_TipoTelefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoTelefono">
+        <PropertyRef Name="idTipoTelefono" />
+      </Principal>
+      <Dependent Role="Cliente_TipoTelefono">
+        <PropertyRef Name="tipoTelefono" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_Cliente">
+    <End Role="Cliente" Type="SIPROLIMARModel.Store.Cliente" Multiplicity="1" />
+    <End Role="Factura" Type="SIPROLIMARModel.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_TipoFactura">
+    <End Role="TipoFactura" Type="SIPROLIMARModel.Store.TipoFactura" Multiplicity="1" />
+    <End Role="Factura" Type="SIPROLIMARModel.Store.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoFactura">
+        <PropertyRef Name="idTipoFactura" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="tipoFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LineaFactura_Factura">
+    <End Role="Factura" Type="SIPROLIMARModel.Store.Factura" Multiplicity="1" />
+    <End Role="LineaFactura" Type="SIPROLIMARModel.Store.LineaFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="idFactura" />
+      </Principal>
+      <Dependent Role="LineaFactura">
+        <PropertyRef Name="factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LineaFactura_Producto">
+    <End Role="Producto" Type="SIPROLIMARModel.Store.Producto" Multiplicity="1" />
+    <End Role="LineaFactura" Type="SIPROLIMARModel.Store.LineaFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="LineaFactura">
+        <PropertyRef Name="producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_TamannoProducto">
+    <End Role="TamannoProducto" Type="SIPROLIMARModel.Store.TamannoProducto" Multiplicity="1" />
+    <End Role="Producto" Type="SIPROLIMARModel.Store.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TamannoProducto">
+        <PropertyRef Name="idTamaño" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="tamaño" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Rol_Rol">
+    <End Role="Rol" Type="SIPROLIMARModel.Store.Rol" Multiplicity="1" />
+    <End Role="Usuario_Rol" Type="SIPROLIMARModel.Store.Usuario_Rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="Usuario_Rol">
+        <PropertyRef Name="rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Rol_Usuario">
+    <End Role="Usuario" Type="SIPROLIMARModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Usuario_Rol" Type="SIPROLIMARModel.Store.Usuario_Rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Usuario_Rol">
+        <PropertyRef Name="usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

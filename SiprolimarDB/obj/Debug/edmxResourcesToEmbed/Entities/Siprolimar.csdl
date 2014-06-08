@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SIPROLIMARModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SIPROLIMAREntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="SIPROLIMARModel.Cliente" />
+    <EntitySet Name="Factura" EntityType="SIPROLIMARModel.Factura" />
+    <EntitySet Name="LineaFactura" EntityType="SIPROLIMARModel.LineaFactura" />
+    <EntitySet Name="Perfil" EntityType="SIPROLIMARModel.Perfil" />
+    <EntitySet Name="Producto" EntityType="SIPROLIMARModel.Producto" />
+    <EntitySet Name="sysdiagrams" EntityType="SIPROLIMARModel.sysdiagrams" />
+    <EntitySet Name="Tamaño" EntityType="SIPROLIMARModel.Tamaño" />
+    <EntitySet Name="Telefono" EntityType="SIPROLIMARModel.Telefono" />
+    <EntitySet Name="TipoFactura" EntityType="SIPROLIMARModel.TipoFactura" />
+    <EntitySet Name="TipoFacturaPagada" EntityType="SIPROLIMARModel.TipoFacturaPagada" />
+    <EntitySet Name="TipoProducto" EntityType="SIPROLIMARModel.TipoProducto" />
+    <EntitySet Name="Usuarios" EntityType="SIPROLIMARModel.Usuarios" />
+    <AssociationSet Name="FK_Cliente_Telefono" Association="SIPROLIMARModel.FK_Cliente_Telefono">
+      <End Role="Telefono" EntitySet="Telefono" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_Cliente" Association="SIPROLIMARModel.FK_Factura_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_TipoFactura" Association="SIPROLIMARModel.FK_Factura_TipoFactura">
+      <End Role="TipoFactura" EntitySet="TipoFactura" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LineaFactura_Factura" Association="SIPROLIMARModel.FK_LineaFactura_Factura">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="LineaFactura" EntitySet="LineaFactura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LineaFactura_Producto" Association="SIPROLIMARModel.FK_LineaFactura_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="LineaFactura" EntitySet="LineaFactura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Perfil" Association="SIPROLIMARModel.FK_Usuarios_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_TipoProducto" Association="SIPROLIMARModel.FK_Producto_TipoProducto">
+      <End Role="TipoProducto" EntitySet="TipoProducto" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoProducto_Tamaño" Association="SIPROLIMARModel.FK_TipoProducto_Tamaño">
+      <End Role="Tamaño" EntitySet="Tamaño" />
+      <End Role="TipoProducto" EntitySet="TipoProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoFactura_TipoFacturaPagada" Association="SIPROLIMARModel.FK_TipoFactura_TipoFacturaPagada">
+      <End Role="TipoFacturaPagada" EntitySet="TipoFacturaPagada" />
+      <End Role="TipoFactura" EntitySet="TipoFactura" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="Cedula" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Direccion" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Telefono" Type="Int32" Nullable="false" />
+    <Property Name="Correo" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="NombreEmpresa" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Telefono1" Relationship="SIPROLIMARModel.FK_Cliente_Telefono" FromRole="Cliente" ToRole="Telefono" />
+    <NavigationProperty Name="Factura" Relationship="SIPROLIMARModel.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="IdFactura" />
+    </Key>
+    <Property Name="IdFactura" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaHora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MontoTotal" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Cliente" Type="Int32" Nullable="false" />
+    <Property Name="TipoFactura" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cliente1" Relationship="SIPROLIMARModel.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
+    <NavigationProperty Name="TipoFactura1" Relationship="SIPROLIMARModel.FK_Factura_TipoFactura" FromRole="Factura" ToRole="TipoFactura" />
+    <NavigationProperty Name="LineaFactura" Relationship="SIPROLIMARModel.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
+  </EntityType>
+  <EntityType Name="LineaFactura">
+    <Key>
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Factura" />
+    </Key>
+    <Property Name="Producto" Type="Int32" Nullable="false" />
+    <Property Name="Factura" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Factura1" Relationship="SIPROLIMARModel.FK_LineaFactura_Factura" FromRole="LineaFactura" ToRole="Factura" />
+    <NavigationProperty Name="Producto1" Relationship="SIPROLIMARModel.FK_LineaFactura_Producto" FromRole="LineaFactura" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+    </Key>
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Usuarios" Relationship="SIPROLIMARModel.FK_Usuarios_Perfil" FromRole="Perfil" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="IdProdcuto" />
+    </Key>
+    <Property Name="IdProdcuto" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TipoProducto" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="PrecioVenta" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="LineaFactura" Relationship="SIPROLIMARModel.FK_LineaFactura_Producto" FromRole="Producto" ToRole="LineaFactura" />
+    <NavigationProperty Name="TipoProducto1" Relationship="SIPROLIMARModel.FK_Producto_TipoProducto" FromRole="Producto" ToRole="TipoProducto" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tamaño">
+    <Key>
+      <PropertyRef Name="IdTamanno" />
+    </Key>
+    <Property Name="IdTamanno" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TipoProducto" Relationship="SIPROLIMARModel.FK_TipoProducto_Tamaño" FromRole="Tamaño" ToRole="TipoProducto" />
+  </EntityType>
+  <EntityType Name="Telefono">
+    <Key>
+      <PropertyRef Name="IdTelefono" />
+    </Key>
+    <Property Name="IdTelefono" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Telefono1" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Cliente" Relationship="SIPROLIMARModel.FK_Cliente_Telefono" FromRole="Telefono" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="TipoFactura">
+    <Key>
+      <PropertyRef Name="IdTipoFactura" />
+    </Key>
+    <Property Name="IdTipoFactura" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TipoFacturaPagada" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Factura" Relationship="SIPROLIMARModel.FK_Factura_TipoFactura" FromRole="TipoFactura" ToRole="Factura" />
+    <NavigationProperty Name="TipoFacturaPagada1" Relationship="SIPROLIMARModel.FK_TipoFactura_TipoFacturaPagada" FromRole="TipoFactura" ToRole="TipoFacturaPagada" />
+  </EntityType>
+  <EntityType Name="TipoFacturaPagada">
+    <Key>
+      <PropertyRef Name="IdFacPagada" />
+    </Key>
+    <Property Name="IdFacPagada" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="TipoFactura" Relationship="SIPROLIMARModel.FK_TipoFactura_TipoFacturaPagada" FromRole="TipoFacturaPagada" ToRole="TipoFactura" />
+  </EntityType>
+  <EntityType Name="TipoProducto">
+    <Key>
+      <PropertyRef Name="IdTipo" />
+    </Key>
+    <Property Name="IdTipo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Tamaño" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="SIPROLIMARModel.FK_Producto_TipoProducto" FromRole="TipoProducto" ToRole="Producto" />
+    <NavigationProperty Name="Tamaño1" Relationship="SIPROLIMARModel.FK_TipoProducto_Tamaño" FromRole="TipoProducto" ToRole="Tamaño" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Contrasenna" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Perfil" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Perfil1" Relationship="SIPROLIMARModel.FK_Usuarios_Perfil" FromRole="Usuarios" ToRole="Perfil" />
+  </EntityType>
+  <Association Name="FK_Cliente_Telefono">
+    <End Role="Telefono" Type="SIPROLIMARModel.Telefono" Multiplicity="1" />
+    <End Role="Cliente" Type="SIPROLIMARModel.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Telefono">
+        <PropertyRef Name="IdTelefono" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="Telefono" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_Cliente">
+    <End Role="Cliente" Type="SIPROLIMARModel.Cliente" Multiplicity="1" />
+    <End Role="Factura" Type="SIPROLIMARModel.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_TipoFactura">
+    <End Role="TipoFactura" Type="SIPROLIMARModel.TipoFactura" Multiplicity="1" />
+    <End Role="Factura" Type="SIPROLIMARModel.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoFactura">
+        <PropertyRef Name="IdTipoFactura" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="TipoFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LineaFactura_Factura">
+    <End Role="Factura" Type="SIPROLIMARModel.Factura" Multiplicity="1" />
+    <End Role="LineaFactura" Type="SIPROLIMARModel.LineaFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="IdFactura" />
+      </Principal>
+      <Dependent Role="LineaFactura">
+        <PropertyRef Name="Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LineaFactura_Producto">
+    <End Role="Producto" Type="SIPROLIMARModel.Producto" Multiplicity="1" />
+    <End Role="LineaFactura" Type="SIPROLIMARModel.LineaFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProdcuto" />
+      </Principal>
+      <Dependent Role="LineaFactura">
+        <PropertyRef Name="Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Perfil">
+    <End Role="Perfil" Type="SIPROLIMARModel.Perfil" Multiplicity="1" />
+    <End Role="Usuarios" Type="SIPROLIMARModel.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="IdPerfil" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Perfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_TipoProducto">
+    <End Role="TipoProducto" Type="SIPROLIMARModel.TipoProducto" Multiplicity="1" />
+    <End Role="Producto" Type="SIPROLIMARModel.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProducto">
+        <PropertyRef Name="IdTipo" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="TipoProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoProducto_Tamaño">
+    <End Role="Tamaño" Type="SIPROLIMARModel.Tamaño" Multiplicity="1" />
+    <End Role="TipoProducto" Type="SIPROLIMARModel.TipoProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tamaño">
+        <PropertyRef Name="IdTamanno" />
+      </Principal>
+      <Dependent Role="TipoProducto">
+        <PropertyRef Name="Tamaño" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoFactura_TipoFacturaPagada">
+    <End Role="TipoFacturaPagada" Type="SIPROLIMARModel.TipoFacturaPagada" Multiplicity="1" />
+    <End Role="TipoFactura" Type="SIPROLIMARModel.TipoFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoFacturaPagada">
+        <PropertyRef Name="IdFacPagada" />
+      </Principal>
+      <Dependent Role="TipoFactura">
+        <PropertyRef Name="TipoFacturaPagada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
