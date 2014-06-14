@@ -73,6 +73,7 @@ namespace SiprolimarApi.App_Start
             kernel.Bind<IProducto>().To<DALProducto>();
             kernel.Bind<ITipoFactura>().To<DALTipoFactura>();
             kernel.Bind<IFactura>().To<DALFactura>();
+            kernel.Bind<ITipoTelefono>().To<DALTipoTelefono>();
         }        
     }
 }
