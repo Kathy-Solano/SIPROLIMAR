@@ -170,6 +170,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TamannoProductoController.cs" />
     <Compile Include="Controllers\TipoFacturaController.cs" />
+    <Compile Include="Controllers\TipoTelefonoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\DALFactura.cs" />
@@ -177,12 +178,14 @@
     <Compile Include="DAL\DALRol.cs" />
     <Compile Include="DAL\DALTamannoProducto.cs" />
     <Compile Include="DAL\DALTipoFactura.cs" />
+    <Compile Include="DAL\DALTipoTelefono.cs" />
     <Compile Include="DAL\DALUsuario.cs" />
     <Compile Include="DAL\IFactura.cs" />
     <Compile Include="DAL\IProducto.cs" />
     <Compile Include="DAL\IRol.cs" />
     <Compile Include="DAL\ITamannoProducto.cs" />
     <Compile Include="DAL\ITipoFactura.cs" />
+    <Compile Include="DAL\ITipoTelefono.cs" />
     <Compile Include="DAL\IUsuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -302,7 +305,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SiprolimarDB\SiprolimarDB.csproj">
+    <ProjectReference Include="..\SiprolimarDB\SiprolimarDB.csproj">
       <Project>{37024f84-13ad-4465-8f0d-44acc290d715}</Project>
       <Name>SiprolimarDB</Name>
     </ProjectReference>

@@ -25,3 +25,20 @@ C:\Users\Marcela\Documents\Practica Profesional\SiprolimarDB\bin\Debug\WebActiva
 C:\Users\Marcela\Documents\Practica Profesional\SiprolimarDB\obj\Debug\SiprolimarDB.dll
 C:\Users\Marcela\Documents\Practica Profesional\SiprolimarDB\obj\Debug\SiprolimarDB.pdb
 C:\Users\Marcela\Documents\Practica Profesional\SiprolimarDB\obj\Debug\SiprolimarDB.csprojResolveAssemblyReference.cache
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\SiprolimarDB.dll.config
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\SiprolimarDB.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\SiprolimarDB.pdb
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\Microsoft.Web.Infrastructure.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Net.Http.Formatting.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Web.Http.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Web.Http.WebHost.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\Microsoft.Web.Infrastructure.xml
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Net.Http.Formatting.xml
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Web.Http.xml
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Web.Http.WebHost.xml
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\es\System.Net.Http.Formatting.resources.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\es\System.Web.Http.resources.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\es\System.Web.Http.WebHost.resources.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.csprojResolveAssemblyReference.cache
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.dll
+H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.pdb
