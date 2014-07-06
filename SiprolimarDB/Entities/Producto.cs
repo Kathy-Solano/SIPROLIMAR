@@ -21,7 +21,7 @@ namespace SiprolimarDB.Entities
     
         public int idProducto { get; set; }
         public string nombre { get; set; }
-        public int tamaño { get; set; }
+        public int tamanno { get; set; }
         public int cantidadExistencia { get; set; }
         public double precioVenta { get; set; }
     

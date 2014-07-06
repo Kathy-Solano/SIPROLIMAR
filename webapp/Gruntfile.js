@@ -126,12 +126,7 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc',
                 reporter: require('jshint-stylish')
             },
-            all: [
-                'Gruntfile.js',
-                '<%= config.app %>/scripts/{,*/}*.js',
-                '!<%= config.app %>/scripts/vendor/*',
-                'test/spec/{,*/}*.js'
-            ]
+            
         },
 
         // Mocha testing framework configuration options

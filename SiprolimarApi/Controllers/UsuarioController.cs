@@ -32,5 +32,9 @@ namespace SiprolimarApi.Controllers
         {
             return _usuario.getUsuario(id);
         }
+        public bool get(string nombre, string password)
+        {
+            return _usuario.login(nombre, password);
+        }
     }
 }

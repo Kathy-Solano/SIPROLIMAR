@@ -7,7 +7,6 @@
     <EntitySet Name="LineaFactura" EntityType="SIPROLIMARModel.Store.LineaFactura" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Producto" EntityType="SIPROLIMARModel.Store.Producto" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Rol" EntityType="SIPROLIMARModel.Store.Rol" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="sysdiagrams" EntityType="SIPROLIMARModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TamannoProducto" EntityType="SIPROLIMARModel.Store.TamannoProducto" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TipoFactura" EntityType="SIPROLIMARModel.Store.TipoFactura" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TipoTelefono" EntityType="SIPROLIMARModel.Store.TipoTelefono" store:Type="Tables" Schema="dbo" />
@@ -95,7 +94,7 @@
     </Key>
     <Property Name="idProducto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="nombre" Type="nchar" Nullable="false" MaxLength="20" />
-    <Property Name="tamaño" Type="int" Nullable="false" />
+    <Property Name="tamanno" Type="int" Nullable="false" />
     <Property Name="cantidadExistencia" Type="int" Nullable="false" />
     <Property Name="precioVenta" Type="float" Nullable="false" />
   </EntityType>
@@ -105,16 +104,6 @@
     </Key>
     <Property Name="idRol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="nombre" Type="nchar" Nullable="false" MaxLength="20" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TamannoProducto">
     <Key>
@@ -234,7 +223,7 @@
         <PropertyRef Name="idTamaño" />
       </Principal>
       <Dependent Role="Producto">
-        <PropertyRef Name="tamaño" />
+        <PropertyRef Name="tamanno" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -262,35 +251,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
 </Schema>

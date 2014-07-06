@@ -12,5 +12,6 @@ namespace SiprolimarApi.DAL
         List<Usuario> getUsuarios();
         Usuario getUsuarioporNombre(string nombre);
         Usuario getUsuario(int id);
+        bool login(string nombre, string password);
     }
 }

@@ -42,6 +42,8 @@
 	<!-- Main Theme Stylesheet :: CSS -->
 	<link href="styles/style-default-menus-dark.css?1374506533" rel="stylesheet" />
 
+	<link href="styles/css/siprolimar.css" rel="stylesheet" />
+
 </head>
 <body class="login">
 	
@@ -59,23 +61,23 @@
 				<div class="widget-body">
 				
 					<!-- Form -->
-					<form method="post" action="index.html?lang=en&amp;style=style-default-menus-dark">
+					<form method="post" action="">
 						<label>Usuario</label>
-						<input type="text" class="input-block-level" placeholder="Usuario"/> 
+						<input id="usuario" type="text" class="input-block-level" placeholder="Usuario"/> 
 						<label>Contraseña</label>
-						<input type="password" class="input-block-level margin-none" placeholder="Contraseña" />
+						<input id="password" type="password" class="input-block-level margin-none" placeholder="Contraseña" />
 						<div class="separator bottom"></div> 
 						<div class="row-fluid">
 							<div class="span8">
-								<div class="uniformjs"><label class="checkbox"><input type="checkbox" value="remember-me">Recordarme</label></div>
+								<!--<div class="uniformjs"><label class="checkbox"><input type="checkbox" value="remember-me">Recordarme</label></div>-->
 							</div>
 							<div class="span4 center">
-								<button class="btn btn-block btn-inverse" type="submit">Iniciar Sesión</button>
+								<a id="loginButton" class="btn btn-block btn-inverse" type="submit">Iniciar Sesión</a>
 							</div>
 						</div>
 					</form>
 					<!-- // Form END -->
-							
+					<div id="loginNotificator" style="display:none"><span></span></div>		
 				</div>
 			</div>
 			<!-- // Box END -->
@@ -100,13 +102,6 @@
 	<!-- JQueryUI Touch Punch -->
 	<!-- small hack that enables the use of touch events on sites using the jQuery UI user interface library -->
 	<script src="scripts/jquery.ui.touch-punch.min.js"></script>
-	
-	
-	<!-- jQuery REVOLUTION Slider  -->
-    <script type="text/javascript" src="scripts/jquery.themepunch.revolution.min.js"></script>
-    
-    <!-- Front Index with Revolution Slider Demo Script -->
-	<script src="scripts/front_index_revolutionslider.js"></script>
 
 	<!-- Modernizr -->
 	<script src="scripts/modernizr.js"></script>
@@ -122,13 +117,6 @@
 	
 	<!-- jQuery ScrollTo Plugin -->
 	<!--[if gt IE 8]><!--><script src="http://balupton.github.io/jquery-scrollto/lib/jquery-scrollto.js"></script><!--<![endif]-->
-	
-	<!-- History.js -->
-	<!--[if gt IE 8]><!--><script src="http://browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script><!--<![endif]-->
-	
-	<!-- jQuery Ajaxify -->
-	<!--[if gt IE 8]><!--><script src="scripts/ajaxify-html5.js"></script><!--<![endif]-->
-	
 	
 	<!-- Holder Plugin -->
 	<script src="scripts/holder.js"></script>
@@ -151,4 +139,12 @@
 	
 	<!-- Common Demo Script -->
 	<script src="scripts/common.js"></script>
+
+	<script src="scripts/siprolimar_scripts/queries.js"></script>
+	<script src="scripts/siprolimar_scripts/views.js"></script>
+	<script src="scripts/siprolimar_scripts/reportes.js"></script>
+	<script src="scripts/siprolimar_scripts/siprolimar.js"></script>
+	<script src="scripts/siprolimar_scripts/common.js"></script>
+	<script src="scripts/siprolimar_scripts/search.js"></script>
+	<script src="scripts/siprolimar_scripts/login.js"></script>
 </html>

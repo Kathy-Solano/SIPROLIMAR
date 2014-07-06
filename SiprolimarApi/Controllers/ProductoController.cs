@@ -27,5 +27,15 @@ namespace SiprolimarApi.Controllers
         {
             return _producto.getProducto(id);
         }
+        
+        public bool put(int id, [FromBody]Producto producto)
+        {
+            return _producto.UpdateProducto(id, producto); 
+        }
+
+        public bool post([FromBody]Producto producto)
+        {
+            return _producto.InsertProducto(producto);
+        }
     }
 }

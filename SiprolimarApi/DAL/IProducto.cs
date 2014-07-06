@@ -11,5 +11,7 @@ namespace SiprolimarApi.DAL
     {
         List<Producto> getProductos();
         Producto getProducto(int id);
+        bool UpdateProducto(int id, Producto producto);
+        bool InsertProducto(Producto producto);
     }
 }

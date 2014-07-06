@@ -29,5 +29,47 @@ namespace SiprolimarApi.DAL
                 return result;
             }
         }
+
+
+        public bool UpdateProducto(int id, Producto producto)
+        {
+            using (var context = new SIPROLIMAREntities())
+            {
+                var prod = context.Producto.Where(p => p.idProducto == id).FirstOrDefault();
+                if (prod != null)
+                {
+                    prod.nombre = producto.nombre;
+                    prod.tamanno = producto.tamanno;
+                    prod.cantidadExistencia = producto.cantidadExistencia;
+                    prod.precioVenta = producto.precioVenta;
+
+                    context.SaveChanges();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool InsertProducto(Producto producto)
+        {
+            using (var context = new SIPROLIMAREntities())
+            {
+                var prod = context.Producto.Add(producto);
+                if (prod != null)
+                {
+                    context.SaveChanges();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

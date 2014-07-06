@@ -42,3 +42,17 @@ H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\es\System.Web.
 H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.csprojResolveAssemblyReference.cache
 H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.dll
 H:\PracticaProfesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.pdb
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\SiprolimarDB.dll.config
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\SiprolimarDB.dll
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\SiprolimarDB.pdb
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Web.Http.dll
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Web.Http.xml
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.csprojResolveAssemblyReference.cache
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.dll
+C:\Users\Marcela\Documents\Practica Profesional\Proyecto\SIPROLIMAR\SiprolimarDB\obj\Debug\SiprolimarDB.pdb

@@ -81,80 +81,71 @@
   <ItemGroup>
     <Compile Include="App_Start\AttributeRoutingHttpConfig.cs" />
     <Compile Include="Entities\Cliente.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Cliente_TipoTelefono.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Factura.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\LineaFactura.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Producto.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Rol.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\SIPROLIMARDB.Context.cs">
+    <Compile Include="Entities\SiprolimarDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SIPROLIMARDB.Context.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\SIPROLIMARDB.cs">
+    <Compile Include="Entities\SiprolimarDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\SIPROLIMARDB.Designer.cs">
+    <Compile Include="Entities\SiprolimarDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SIPROLIMARDB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\sp_helpdiagrams_Result.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\sysdiagrams.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entities\TamannoProducto.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TipoFactura.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TipoTelefono.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Usuario.cs">
-      <DependentUpon>SIPROLIMARDB.tt</DependentUpon>
+      <DependentUpon>SiprolimarDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="ClassDiagram1.cd" />
-    <EntityDeploy Include="Entities\SIPROLIMARDB.edmx">
+    <EntityDeploy Include="Entities\SiprolimarDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SIPROLIMARDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>SiprolimarDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Entities\SIPROLIMARDB.Context.tt">
+    <None Include="Entities\SiprolimarDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SIPROLIMARDB.edmx</DependentUpon>
-      <LastGenOutput>SIPROLIMARDB.Context.cs</LastGenOutput>
+      <DependentUpon>SiprolimarDB.edmx</DependentUpon>
+      <LastGenOutput>SiprolimarDB.Context.cs</LastGenOutput>
     </None>
-    <None Include="Entities\SIPROLIMARDB.edmx.diagram">
-      <DependentUpon>SIPROLIMARDB.edmx</DependentUpon>
+    <None Include="Entities\SiprolimarDB.edmx.diagram">
+      <DependentUpon>SiprolimarDB.edmx</DependentUpon>
     </None>
-    <None Include="Entities\SIPROLIMARDB.tt">
+    <None Include="Entities\SiprolimarDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SIPROLIMARDB.edmx</DependentUpon>
-      <LastGenOutput>SIPROLIMARDB.cs</LastGenOutput>
+      <DependentUpon>SiprolimarDB.edmx</DependentUpon>
+      <LastGenOutput>SiprolimarDB.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
