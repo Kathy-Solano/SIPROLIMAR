@@ -1,0 +1,62 @@
+/* line 2, ../sass/sass/partials/_general.sass */
+div #content {
+  background-color: #f4f4f4;
+}
+/* line 4, ../sass/sass/partials/_general.sass */
+div .loading {
+  background-image: "images/loading.gif";
+}
+/* line 6, ../sass/sass/partials/_general.sass */
+div #notificador {
+  width: 100%;
+  background-color: #2f82b1;
+  height: 27px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 4px;
+}
+/* line 14, ../sass/sass/partials/_general.sass */
+div #notificador span {
+  color: white;
+  font-size: 19px;
+}
+
+/* line 1, ../sass/sass/partials/_views.sass */
+.view {
+  margin-top: 20px;
+}
+
+/* line 4, ../sass/sass/partials/_views.sass */
+#welcomeView {
+  text-align: center;
+  margin-top: 20px;
+}
+/* line 7, ../sass/sass/partials/_views.sass */
+#welcomeView p {
+  font-size: 32px;
+}
+
+/* line 10, ../sass/sass/partials/_views.sass */
+#reporteProducoFilter {
+  margin-right: 30px;
+}
+
+/* line 13, ../sass/sass/partials/_views.sass */
+#codigoCliente {
+  cursor: pointer;
+}
+/* line 15, ../sass/sass/partials/_views.sass */
+#codigoCliente:hover {
+  color: #2f82b1;
+}
+
+/* line 2, ../sass/sass/partials/_login.sass */
+div #loginNotificator {
+  text-align: center;
+  margin-top: 20px;
+}
+/* line 5, ../sass/sass/partials/_login.sass */
+div #loginNotificator span {
+  color: #b40404;
+}
